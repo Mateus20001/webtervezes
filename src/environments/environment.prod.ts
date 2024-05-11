@@ -1,6 +1,6 @@
 export const environment = {
     firebase: {
-        apiKey: "AIzaSyDdFXwe9Lftt21M9iqTW1pjo_fs8nMrG7A",
+        apiKey: "API KEY",
         authDomain: "webfejl-2024-e9b54.firebaseapp.com",
         databaseURL: "https://webfejl-2024-e9b54-default-rtdb.europe-west1.firebasedatabase.app",
         projectId: "webfejl-2024-e9b54",
