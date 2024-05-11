@@ -1,0 +1,19 @@
+
+<div id="bemutatkozo"><b>Üdvözöllek az Álláskereső Portálon!</b></div><br>
+
+<div><p><span><b>A</b>z Álláskereső Portál azért jött létre, hogy segítsen neked a következő karrierlépésed megtételében. Számos lehetőséget kínálunk a legkülönbözőbb iparágakban és pozíciókban, hogy megtaláld az álmaid munkáját.</span>
+  
+  Regisztrálj most, és élvezd az alábbi előnyöket:
+  
+  <br>Személyre szabott profil: Hozz létre egy részletes és vonzó profiloldalt, hogy kiemelkedj a tömegből és felhívhasd a figyelmet a munkaadókra.
+  <br><b>Á</b>llásajánlatok: Kapj friss és releváns állásajánlatokat az érdeklődési területeid alapján, és jelentkezz gyorsan azokra, amelyek megfelelnek a kritériumaidnak.
+  <br><b>K</b>arrier-tanácsadás: Támogatást és útmutatást nyújtunk az önéletrajzírásban, az interjúkra való felkészülésben és a karriertervezésben, hogy biztos légy a sikerben.
+  <br><b>K</b>özösség: Csatlakozz egy aktív és támogató közösséghez, ahol tapasztalatokat cserélhetsz más álláskeresőkkel és szakemberekkel.
+  Ne hagyd ki ezt az lehetőséget! <br><span id="sajt">Regisztrálj most, és lépj közelebb az álmaid állásához!</span></p></div>
+<h2>Top Állások jelenleg:</h2>
+<div class="heroes-menu">
+  <a *ngFor="let allas of allasok" on
+    routerLink="/detail/{{allas.id}}">
+    {{allas.name}}
+  </a>
+</div>

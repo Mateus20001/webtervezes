@@ -1,0 +1,22 @@
+#emailvun {
+    width: 350px;
+}
+a {
+    border: 2px solid #42545C;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    margin: 10px 5%;
+}
+a:hover {
+    background-color: #42545C;
+    color: white;
+}
+div p {
+    margin-bottom: 30px;
+}
+h1 {
+    margin-top: 10px;
+    text-align:center;
+}

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "webfejl-2024-e9b54"
+  },
+  "targets": {
+    "webfejl-2024-e9b54": {
+      "hosting": {
+        "allaskereso": [
+          "webfejl-2024-e9b54"
+        ]
+      }
+    }
+  }
+}

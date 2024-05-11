@@ -1,0 +1,42 @@
+<div class="container">
+  <div *ngIf="!submitted">
+    <h1>Állásjelentkezés</h1>
+    <form (ngSubmit)="onSubmit()" #allasForm="ngForm">
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" id="name" required
+                 [(ngModel)]="model.name" name="name" #name="ngModel">
+          <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">Email beírása szükséges</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Állás</mat-label>
+          <mat-select matInput id="power" required
+                      [(ngModel)]="model.power" name="power" #power="ngModel">
+            <mat-option *ngFor="let pow of powers" [value]="pow">{{pow}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="power.invalid && (power.dirty || power.touched)">Állás kijelölése szükséges</mat-error>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!allasForm.form.valid">Submit</button>
+    </form>
+  </div>
+
+  <div *ngIf="submitted">
+    <h2>Az alábbi adatokat küldte el, ha szeretné módosítani még megteheti, a szerkesztés gombra kattintva.</h2>
+    <div class="row">
+      <div class="col-xs-3">Neve:</div>
+      <div class="col-xs-9">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Állás:</div>
+      <div class="col-xs-9">{{ model.power }}</div>
+    </div>
+    <br>
+    <button mat-raised-button color="primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>

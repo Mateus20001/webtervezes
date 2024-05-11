@@ -1,0 +1,64 @@
+
+
+<div class="container">
+    <h1>Regisztráció</h1>
+    <form (ngSubmit)="onSubmit()" #regForm="ngForm">
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Felhasználónév</mat-label>
+          <input matInput type="text" id="username" required
+                 [(ngModel)]="registration.username" name="username" #username="ngModel">
+          <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">Felhasználónév megadása kötelező</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-radio-group [(ngModel)]="registration.gender" name="gender">
+        <mat-radio-button value="male">Férfi</mat-radio-button>
+        <mat-radio-button value="female">Nő</mat-radio-button>
+      </mat-radio-group>
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" id="email" required
+                 [(ngModel)]="registration.email" name="email" #email="ngModel">
+          <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">Érvényes email cím megadása kötelező</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Jelszó</mat-label>
+          <input matInput type="password" id="password" required
+                 [(ngModel)]="registration.password" name="password" #password="ngModel">
+          <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">Jelszó megadása kötelező</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Jelszó megerősítése</mat-label>
+          <input matInput type="password" id="confirmPassword" required
+                 [(ngModel)]="registration.confirmPassword" name="confirmPassword" #confirmPassword="ngModel">
+          <mat-error *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">Jelszó megerősítése kötelező</mat-error>
+          <mat-error *ngIf="registration.password !== registration.confirmPassword">A jelszavaknak egyezniük kell</mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <mat-form-field>
+        <mat-label>Válasszon dátumot</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="Dátum" [(ngModel)]="registration.selectedDate" name="selectedDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-slide-toggle [(ngModel)]="registration.isSubscribed" name="isSubscribed">Feliratkozás</mat-slide-toggle>
+      <br>
+      <mat-checkbox [(ngModel)]="agreeTerms" name="agreeTerms" required="">Elfogadom a feltételeket</mat-checkbox>
+      <br>
+      <mat-error *ngIf="!agreeTerms">A feltételek elfogadása kötelező</mat-error>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!regForm.form.valid || registration.password !== registration.confirmPassword">Regisztráció</button>
+      <a routerLink="/bejelentkezes"><button mat-raised-button type="button" routerLink="bejelentkezes">Vissza</button></a>
+    </form>
+  </div>
+
+  

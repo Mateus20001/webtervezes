@@ -1,0 +1,13 @@
+<div style="text-align: center;">
+    <h1>A Profilod:</h1>
+    <p></p>
+    <h2>{{ user.email }}</h2>
+    <h2>{{ user.email.split('@')[0] }}</h2>
+    <button mat-raised-button color="primary" (click)="editProfile()">Profil Módosítása</button>
+    <button mat-raised-button color="primary" (click)="deleteProfile()">Profil Törlése</button>
+    <div *ngIf="isEditing">
+      <input matInput placeholder="Új felhasználónév" [(ngModel)]="newUsername">
+      <button mat-raised-button color="accent" (click)="saveChanges()">Mentés</button>
+    </div>
+  </div>
+  

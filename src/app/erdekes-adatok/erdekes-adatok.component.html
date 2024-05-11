@@ -1,0 +1,12 @@
+<select (change)="onImageChange($event)">
+    <option value="Image 1">Ai átveszi a munkahelyünk?</option>
+    <option value="Image 2">Motiváció a munkákhoz:</option>
+    <option value="Image 3">Homeoffice?</option>
+  </select>
+  
+  <div *ngIf="selectedImage">
+    <img [src]="'assets/' + selectedImage.path" alt="Kép">
+    <h3>{{ selectedImage.topdescription }}</h3>
+    <hr>
+    <h3>{{ selectedImage.botdescription }}</h3>
+  </div>

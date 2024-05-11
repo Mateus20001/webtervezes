@@ -1,0 +1,12 @@
+<div *ngIf="allas">
+  <h2>{{allas.name | capitalizeFirst }}</h2>
+  <div>
+    <label for="allas-name">Állás neve: {{allas.name}}</label>
+  </div>
+  <img class="allaskepe" [src]="'assets/' + allas.kepurl" alt="allaskepe">
+  <p class="leiras">{{allas.leiras}}</p>
+    <li *ngFor="let szukseges of allas.szukseges">
+    <span>{{szukseges}}</span>
+  </li>
+  <button type="button" (click)="goBack()">go back</button>
+</div>
